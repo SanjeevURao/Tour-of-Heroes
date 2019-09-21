@@ -11,6 +11,10 @@ import {MessageService} from './message.service';
 
 
 export class HeroService {
+  getHero(id: number) : Observable<Hero> {
+    this.messageService.add(`HeroService: fetched hero id=${id}`);  //Note the backticks ( ` ) that define a JavaScript template literal for embedding the id.
+    return of(HEROES.find(hero => hero.id === id));
+  }
 
   constructor(private messageService : MessageService) { }
 

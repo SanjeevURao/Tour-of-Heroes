@@ -14,7 +14,7 @@ export class HeroesComponent implements OnInit {
 
   messageService : MessageService;
   
-  heroes;
+  heroes : Hero[] ;
 
   getHeroes(): void {
     this.heroService.getHeroes().subscribe(
@@ -23,14 +23,6 @@ export class HeroesComponent implements OnInit {
 
     );
   }
-
-
-
-  selectedHero: Hero;
-  onSelect(hero: Hero): void {
-  this.selectedHero = hero;
-}
- 
   
 
   ngOnInit() {
